@@ -47,6 +47,15 @@ body{
     text-align: center;
 }
 
+.current:after{
+    display: block;
+    content:"";
+    height: 4px;
+    width: 100%;
+    background-color: var(--color-blue);
+    border-radius: 2px;
+}
+
 /*---header---*/
 
 header{
@@ -91,6 +100,9 @@ header nav .menu .menu-link {
     color: var(--color-blue);   
 }
 .menu .menu-link:focus{
+    color: var(--color-blue);
+}
+.menu .menu-link.current {
     color: var(--color-blue);
 }
 .contact{
