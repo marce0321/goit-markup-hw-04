@@ -5,9 +5,11 @@
     --black: #212121;
     --gray-text-color:  #757575 ;
     --background-color: #2F303A;
-    --backgroun-color-gray: #F5F4FA;
+    --backgroun-color-gray: #F5F4FA; 
     --color-blue: #2196F3;
     --text-white-opacity: #ffffff99; 
+    --icon-color-gray:#AFB1B8;
+    --background-color-icon: rgba(255, 255, 255, 0.1);
 }
 * {
     margin: 0;
@@ -96,6 +98,7 @@ header nav .menu .menu-link {
     text-decoration: none;
     text-transform: capitalize;
   }
+
 .menu .menu-link:hover{
     color: var(--color-blue);   
 }
@@ -117,14 +120,20 @@ header nav .menu .menu-link {
     line-height: 1.4;
     letter-spacing: 0.02em;
     text-decoration: none;
+    fill:var(--gray-text-color);
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
 .contact .menu-contact:hover{
     font-weight: 500;
-    line-height: 16px;
     color: var(--color-blue);
     text-decoration: none;
+    fill: var(--color-blue)
 }
+
 .contact .menu-contact:focus{
     color:var(--color-blue)
 }
@@ -135,12 +144,24 @@ header nav .menu .menu-link {
 .content {
     align-items: center;
     background-color: var(--background-color);
+    position: relative;
+     
     color:  var(--white);
     display: flex;
     flex-direction: column;
     height: 600px;
     justify-content: center;
+
 }
+.content:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    background-image: url(/images/Image\ background.jpg);
+    opacity: .5;
+    }
 
 .content-title {
     color: var(--white);
@@ -149,6 +170,7 @@ header nav .menu .menu-link {
     text-align: center;
     text-transform: uppercase;
     width: 696px;
+    position:relative;
 }
 .button-main {
     align-items: center;
@@ -163,6 +185,7 @@ header nav .menu .menu-link {
     justify-content: center;
     margin-top: 1%;
     width: 261px;
+    position:relative;
 }
 
 /*---services---*/
@@ -174,13 +197,26 @@ header nav .menu .menu-link {
     flex-grow: 1;  
 }
 .services li{
-    width: 240px;
+    width: 270px;
     list-style: none;
+    margin-right: 30px;
+    align-items: center;
+}
+.services li div{
+    background-color: var(--backgroun-color-gray);
+    display: flex;
+    height: 120px;
+    width: 270px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    
 }
 .services li .services-title{
   height: 50px;
   text-transform: uppercase;
   color: var(--black);
+  margin-top: 20px;
 }
 
 
@@ -191,12 +227,29 @@ header nav .menu .menu-link {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    
+
   }
-  .what-we-do li {
+  .what-we-do li{
     list-style: none;
-    width: 360px;
+    width: 370px;
+    position: relative;
   }
-/*---our-team--*/
+.text-img{
+    color: var(--white);
+    background-color: var(--background-color);
+    height: 70px;
+    width: 370px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 27px;
+    opacity:.80; 
+    
+    position:absolute;
+    top: 224px;
+}
+
+  /*---our-team--*/
 
 .our-team{
     background-color:var(--backgroun-color-gray);
@@ -209,21 +262,84 @@ header nav .menu .menu-link {
     list-style: none;
     justify-content: space-between;
     list-style: none;
-   
 }
 
 .card-team{
     background: var(--white);
     box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
     border-radius: 0px 0px 4px 4px;
-    text-align: center;
+    text-align:center;  
+    
 }
+
+.card-team svg{
+    width: 20px;
+    margin: 10px 10px;
+    display: flex;
+    fill: var(--gray-text-color);
+
+}
+.card-team .icon-list{
+    display: flex;
+    gap: 15px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+.card-team .icon-list li{
+    align-items: center;
+    
+}
+.card-team .icon-social{
+    display:flex; 
+    border-radius: 25px;
+}
+
+.card-team:hover .icon-social:hover{
+    background-color: var(--color-blue);   
+    
+}
+.card-team .icon-social:hover svg{
+    fill: var(--white);
+}
+
 .team-title{
     margin: 20px 0 10px 0;
 }
 .card-team p {
     margin-bottom: 30px;
 }
+/*--usual-customers--*/
+.customers{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-grow: 1; 
+    list-style: none;
+    
+}
+.customers li{  
+    fill:var(--icon-color-gray);
+    border: 1px solid var(--icon-color-gray);
+    border-color: var(--icon-color-gray);
+    border-radius: 4px;
+    width: 170px;
+    height: 81px;
+    box-sizing: border-box;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.customers li:hover{
+    border: 1px solid var(--color-blue);   
+    fill:var(--color-blue); 
+}
+
+
 /*---portfolio--*/
 .portfolio{
     align-items: center;
@@ -235,7 +351,6 @@ header nav .menu .menu-link {
     display: flex;
     justify-content: center;
     height: fit-content;
-    justify-content: center;
     margin-bottom: 30px;
 }
 
@@ -287,13 +402,14 @@ header nav .menu .menu-link {
      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
      border-radius: 4px;
  }
+
  /*---cards-portfolio--*/
  .portfolio {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 7px;
   }
   .portfolio li {
     list-style: none;
@@ -319,16 +435,27 @@ header nav .menu .menu-link {
     text-align: center;
     
 }
+.card-port:hover{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 
 
 /*---footer---*/
 .footer {
     background:var(--background-color);
-    padding: 94px;    
+    padding: 94px;  
+    display: flex;
+    justify-content: left;
+    padding-right: 15px;
+
+}
+.footer div{
+    padding-right: 20px;
 }
 
 address ul {
    list-style: none;
+   
  }
 
 .address {
@@ -351,3 +478,33 @@ address ul {
    .footer-contact:focus{
        color: var(--color-blue);
    }
+   
+   .footer .icon-list-footer{
+    display:flex;
+    list-style: none;
+    gap: 15px;
+    
+        
+   }
+   .icon-list-footer svg{
+    width: 20px;
+    margin: 10px 10px;
+    display: flex;
+    fill: var(--white);
+    
+    }
+    .icon-list-footer .icon-social-footer{
+        display:flex; 
+        border-radius: 25px;
+        background-color: var(--background-color-icon);
+        
+    }
+    .footer h3{
+        font-size: 14px;
+        color: var(--white);
+        padding-bottom: 15px;
+    }
+    .icon-list-footer:hover .icon-social-footer:hover{
+        background-color: var(--color-blue);   
+        
+    }
