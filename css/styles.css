@@ -157,8 +157,8 @@ header nav .menu .menu-link {
 .content:before{
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 1600px;
+    height: 600px;
     background:linear-gradient( rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(..//images/background.jpg);
        
     }
@@ -369,7 +369,7 @@ header nav .menu .menu-link {
     border-style: none; 
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px rgb(238 238 238);
-    margin: 5px;
+    margin: 100px 5px 0px 0px;
     padding-left: 1%;
     padding-right: 1%;
     white-space: nowrap;
@@ -404,17 +404,18 @@ header nav .menu .menu-link {
  }
 
  /*---cards-portfolio--*/
- .portfolio {
+ .port{
+    margin: 0px 85px;
+ }
+ .port .portfolio{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content:space-between;
     flex-wrap: wrap;
-    gap: 7px;
-  }
-  .portfolio li {
+ }
+ .port .portfolio li {
     list-style: none;
     width: 370px;
-    margin-bottom: 40px; 
+    margin-bottom: 30px; 
   }
 
 
