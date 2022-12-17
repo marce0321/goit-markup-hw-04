@@ -338,8 +338,6 @@ header nav .menu .menu-link {
 }
    
 /*--button-portfolio--*/
-
-
 .port-category {
     display: flex;
     flex-direction: row;
@@ -406,20 +404,20 @@ header nav .menu .menu-link {
  }
 
  /*---cards-portfolio--*/
- .port{
-    width: 1170px;
+ .section .port{
     box-sizing: content-box;
-    padding: 0px;
-    margin: 50px 85px ;
+    justify-content: center;
  }
 
- .port .portfolio{
+
+ .portfolio{
     display: flex;
     justify-content:space-between;
     flex-wrap: wrap;
     gap:30px;
+
  }
- .port .portfolio li {
+ .portfolio li {
     list-style: none;
     justify-content: space-between;
     width: 370px;
